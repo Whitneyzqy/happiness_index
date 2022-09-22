@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jerry Sun, Whitney Zhang, Zhan Zhang">
+    <meta name="description" content="main page of the web application">
+    <link rel="icon" type="img/png" href="img/black-icon.svg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>World Happiness</title>
+</head>
+
+<body>
+    <section>
+        <nav class="fixed-top">
+            <div class="nav-left">
+                <a class="logo-text" href="landing.html" role="button"
+                    aria-label="Logo for the website that can be clicked and direct to intro page">
+                    <span class="logo" aria-hidden="true">&nbsp;</span><a class="hide-mobile">World Happiness</a>
+                </a>
+                <a class="nav-text" href="landing.html" role="button"
+                    aria-label="button for directing to intro page">Home</a>
+                <a class="nav-text" href="index.html" role="button"
+                    aria-label="button for directing to dataset page">Dataset</a>
+            </div>
+            <div class="nav-right">
+                <a href="index.html" role="button"><button class="hide-small" aria-label="button for sign up"><span>Sign
+                            Up</span></button></a>
+                <a href="index.html" role="button"><button aria-label="button for log in"><span>Log
+                            In</span></button></a>
+            </div>
+        </nav>
+    </section>
+
+    <main>
+        <div class="container pages">
+            <section class="left-subpage">
+                <header>
+                    <h1>Happiness Report Analysis</h1>
+                    <p>Click on the tabs and get the corresponding data visualizations.
+                    </p>
+                </header>
+                <div class="tab">
+                    <button class="tablinks" role="tab" id="cards"
+                            aria-label="shwoing cardss for dataset">Cards</button>
+                    <button class="tablinks" role="tab" id="table"
+                            aria-label="showing table for dataset">Table</button>
+                </div>
+                <br>
+                <div class="tabcontent cards">
+                    <h2>Top 10 Happiest Countries in the World</h2> 
+                    <p>Based on the reported happniess scores, we list the 10 happiest countries around the word. From these country cards, 
+                        we could see that countries with the highest happiness index mostly located in Europe.
+                    </p>
+                    <p> These countries also tend to have a strong domestic economy, great public health care, high level of indivial freedom. However, 
+                        there is not a clear correlation between people's trust in governments and a country's happiness score.
+                    </p>
+                </div>
+                <div class="tabcontent table">
+                    <h2>View Data Table</h2>
+                    <form class="select-input" role="listbox" aria-label="list of selections of areas">
+                        <label for="years"><h3>Select A Year:</h3></label><br>
+                        <select name="years" id="years">
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                        </select><br><br>
+                        <button id="year-select" type="submit" class="submit-button">Search</button><br><br>
+                    </form>
+                    <form class="text-input" role="textbox" aria-label="textbox for selecting country for the table">
+                        <label for="country-for-table">
+                            <h3>Find A Country:</h3>
+                        </label>
+                        <p>Get the data from 2015 to 2019.</p>
+                        <input type="text" id="country-for-table" class="country-select"
+                            placeholder="Type in a country name" aria-label="country name input"><br><br>
+                        <button id="country-select" type="submit" class="submit-button">Search</button>
+                    </form>
+                </div>
+                <cite class="citation">Data from 
+                    <a href="https://www.kaggle.com/unsdsn/world-happiness" role="link" aria-label="link for data source from Kaggle">
+                        Kaggle: World Happiness Report
+                    </a>
+                </cite>
+            </section>
+            <section class="mid-subpage">
+                <div class="tabcontent cards">
+                    <div class="container" id="cards-container">
+                    </div>
+                </div>
+                <div class="tabcontent table data-table-frame">
+                    <table class="data-table">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                    <div class="table-footer">
+                    </div>
+                </div>
+                <div class="alerts" id="table-alert"><p class="warnings" id="table-warning">No data, please check you input!</p></div>
+            </section>
+
+            <section class="right-subpage tabcontent cards">
+                <h2>Country Information</h2>
+                <cite class="citation">
+                        Data from 
+                        <a href="https://en.wikipedia.org/wiki/Main_Page" role="link" aria-label="link to data source from wikipedia">
+                            Wikipedia
+                        </a>
+                </cite>
+                <form method="GET" action="https://en.wikipedia.org/w/api.php"></form>
+                    <div id="descrp-img"></div>
+                    <div id="description"></div>
+                </form>
+                <div class="alerts" id="img-alert"></div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <!-- Website Info -->
+        <p>
+            &copy; 2021 University of Washington All rights reserved. Contact with
+            <a href="mailto:zhanz1@uw.edu" role="link" aria-label="Zhan's email">Zhan</a>,
+            <a href="mailto:qiaoyi@uw.edu" role="link" aria-label="Whitney's email">Whitney</a>,
+            <a href="mailto:zsun0510@uw.edu" role="link" aria-label="Jerry's email">Jerry</a>
+        </p>
+    </footer>
+</body>
+  <!-- Load JavaScript libraries here -->
+  <script src="js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+</html>

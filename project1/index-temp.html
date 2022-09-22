@@ -1,0 +1,150 @@
+<!-- This page demonstrates how user interact with it will change the view. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jerry Sun, Whitney Zhang, Zhan Zhang">
+    <meta name="description" content="main page of the web application">
+    <link rel="icon" type="img/png" href="img/black-icon.svg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main-style.css">
+    <script src="js/index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>World Happiness</title>
+</head>
+
+<body>
+    <section>
+        <nav class="fixed-top">
+            <div class="nav-left">
+                <a class="logo-text" href="landing.html" role="button" aria-label="Logo for the website that can be clicked and direct to intro page">
+                    <span class="logo" aria-hidden="true">&nbsp;</span><a class="hide-mobile">World Happiness</a>
+                </a>
+                <a class="nav-text" href="landing.html" role="button" aria-label="button for directing to intro page">Home</a>
+                <a class="nav-text" href="index.html" role="button" aria-label="button for directing to dataset page">Dataset</a>
+            </div>
+            <div class="nav-right">
+                <a href="index.html" role="button"><button aria-label="button for sign up"><span>Sign Up</span></button></a>
+                <a href="index.html" role="button"><button aria-label="button for log in"><span>Log In</span></button></a>
+            </div>
+        </nav>
+    </section>
+
+    <main>
+        <div class="container pages">
+            <section class="left-subpage">
+                <header>
+                    <h1>Happiness Analysis</h1>
+                    <p>
+                        Click on the tabs and get the corresponding analysis.
+                        (Using `a` for showing the view for now)
+                    </p>
+                </header>
+                <div class="tab">
+                    <a href="index.html">
+                        <button class="tablinks" role="tab" onclick="openTab(event, 'graph')" aria-label="shwoing graphs for dataset">Graph</button>
+                    </a>
+                    <a href="index-temp.html">
+                        <button class="tablinks" role="tab" onclick="openTab(event, 'table')" aria-label="showing table for dataset">Table</button>
+                    </a>
+                </div>
+                <br>
+                <div id="table" class="tabcontent">
+                    <h2>Data Table</h2>
+                    <form class="text-input" role="textbox" aria-label="textbox for selecting country for the table">
+                        <label for="country"><h3>Country:</h3></label><br>
+                        <input type="text" id="country" class="country-select" placeholder="Search..."><br><br>
+                        <input type="submit" value="Submit">
+                    </form><br>
+                    <form class="text-input" role="textbox" aria-label="textbox for selecting areas for the table">
+                        <label for="area"><h3>Area:</h3></label><br>
+                        <input type="text" id="area" class="area-select" placeholder="Search..."><br><br>
+                        <input type="submit" value="Submit"><br><br>
+                    </form>
+                </div>
+            </section>
+            <section class="mid-subpage">
+                <div class="tabcontent">
+                    <table class="data-table">
+                        <tr>
+                            <th>Year</th>
+                            <th>Happiness Score</th>
+                            <th>Economics</th>
+                            <th>Freedom</th>
+                            <th>Family</th>
+                            <th>Health</th>
+                            <th>Trust</th>
+                        </tr>
+                        <tr>
+                            <td>2015</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                        </tr>
+                        <tr>
+                            <td>2016</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                        </tr>
+                        <tr>
+                            <td>2017</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                            <td>xxx</td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+            </section>
+
+            <section class="right-subpage">
+                <h3>Country Name Here</h3>
+                <p>
+                    Description: Foo is a country located at Bar, with population of
+                    100000000 people ...
+                </p>
+                <img src="img/sample-map.jpg" alt="sample map for country">
+            </section>
+        </div>
+    </main>
+    <footer>
+        <!-- Website Info -->
+        <p>
+            &copy; 2021 The Author. Contact with 
+            <a href="mailto:zhanz1@uw.edu" role="link" aria-label="Zhan's email">Zhan</a>, 
+            <a href="mailto:qiaoyi@uw.edu" role="link" aria-label="Whitney's email">Whitney</a>, 
+            <a href="mailto:zsun0510@uw.edu" role="link" aria-label="Jerry's email">Jerry</a>
+        </p>
+    </footer>
+</body>
+</html>
